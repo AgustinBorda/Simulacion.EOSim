@@ -15,7 +15,7 @@ public:
 	// destructor
 	~RandomEvent();
 	// rutina del evento fijo
-	void eventRoutine(eosim::core::Entity* who);
+	void eventRoutine(eosim::core::Entity* who, int flag);
 };
 
 #endif // RANDOMEVENT_HPP

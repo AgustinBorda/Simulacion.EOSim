@@ -43,7 +43,7 @@ void SalidaPaciente::eventRoutine(Entity* who) {
 	// se castea owner a un HospitalSimple
 	HospitalSimple& h = dynamic_cast<HospitalSimple&>(owner);
     // Se actualiza area de utlizacion de las camas
-    h.ocupacionCamas.log(h.camas.getQuantity());
+    h.ocupacionCamas.log(h.camas.getMax()-h.camas.getQuantity());
 	// se retorna la cama que el paciente ocupaba
 	h.camas.returnBin(1);
 	if (!h.cola.empty()) {

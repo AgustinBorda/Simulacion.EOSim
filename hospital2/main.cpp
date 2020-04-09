@@ -11,11 +11,8 @@ const unsigned int repeticiones = 4;
 int main () {
 	std::string s;
     using namespace eosim::core;
-    unsigned int cantCamas;
     //repito el experimento una cierta cantidad de veces
     for (int i = 0; i < repeticiones; i++) {
-        std :: cout << "Ingrese la cantidad de camas" << std :: endl;
-        std :: cin >> cantCamas;
         HospitalSimple m(cantCamas, tasaArribos, tiempoEstadia, mediaDistNormal, varianzaDistNormal);
         Experiment e;
         std::cout << "Arranco ...\n";

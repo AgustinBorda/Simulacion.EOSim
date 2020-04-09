@@ -29,7 +29,6 @@ private:
 
 public:
 
-    double lastSimTime;
 	// distribucion aleatoria de arribos de pacientes (exponencial)
 	eosim::dist::NegexpDist arribos;
 	// distribucion aleatoria de estadia de pacientes (exponencial)

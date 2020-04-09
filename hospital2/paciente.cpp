@@ -28,8 +28,6 @@ void PacienteFeeder::eventRoutine(Entity* who) {
 		// se pone al paciente recien llegado en la cola
 		h.cola.push(who);
 	}
-	// Se actualiza el ultimo tiempo de simulacion con el tiempo actual
-	h.lastSimTime = h.getSimTime();
     // se agenda el arribo del un nuevo paciente
 	h.schedule(h.arribos.sample(), new Entity(), pacienteF);
 }
@@ -58,8 +56,6 @@ void SalidaPaciente::eventRoutine(Entity* who) {
 		h.schedule(h.estadia.sample(), ent, salidaP);
 
 	}
-	// Se actualiza el ultimo tiempo de simulacion con el tiempo actual
-	h.lastSimTime = h.getSimTime();
 	// se elimina  al paciente del sistema
 	delete who;
 }

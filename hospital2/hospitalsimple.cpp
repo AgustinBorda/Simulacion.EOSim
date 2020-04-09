@@ -19,9 +19,7 @@ HospitalSimple::HospitalSimple(unsigned int cantCamas, double tasaArribos, doubl
 								camas(cantCamas, cantCamas),
 								tEspera("Tiempos de Espera"),
 								lCola("Largos Medios de Colas", *this),
-								ocupacionCamas("Ocupacion camas", *this),
-								areaUtilizacionServer(0.0),
-								lastSimTime(0.0) {}
+								ocupacionCamas("Ocupacion camas", *this) {}
 
 HospitalSimple::~HospitalSimple() {}
 

@@ -26,8 +26,6 @@ private:
 	PacienteFeeder pF;
 	// evento de salida de los pacientes (fijo)
 	SalidaPaciente sP;
-    // Area bajo b(t)
-	double areaUtilizacionServer;
 
 public:
 
@@ -54,10 +52,6 @@ public:
 	void init();
 	// lleva al modelo a su estado inicial, operacion abstracta de eosim::core::Model
 	void doInitialSchedules();
-
-	double getAreaUtilizacionServer();
-
-	void setAreaUtilizacionServer(double value);
 
 };
 

@@ -39,12 +39,3 @@ void HospitalSimple::doInitialSchedules() {
 	// agendo el primer paciente
 	schedule(0.0, new Entity(), pacienteF);
 }
-
-double HospitalSimple::getAreaUtilizacionServer(){
-    return areaUtilizacionServer;
-}
-
-void HospitalSimple::setAreaUtilizacionServer(double value){
-    areaUtilizacionServer += value;
-}
-

@@ -25,9 +25,6 @@ int main () {
 		m.tEspera.print(0);
 		std::cout << '\n';
 		m.ocupacionCamas.print(0);
-        std :: cout << "Utilizacion camas: " << m.ocupacionCamas.getMean()/ cantCamas << std :: endl;
-		std::cout << "Area de utilizacion de las camas: " << m.getAreaUtilizacionServer() << '\n';
-		std::cout << "Factor de utilizacion de las camas: " << m.getAreaUtilizacionServer() / (m.getSimTime() * cantCamas);
 		std::cin >> s;
     }
 }

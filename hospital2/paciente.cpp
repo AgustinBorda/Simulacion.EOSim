@@ -16,10 +16,8 @@ void PacienteFeeder::eventRoutine(Entity* who) {
 	// se castea owner a un HospitalSimple
 	HospitalSimple& h = dynamic_cast<HospitalSimple&>(owner);
 	if (h.camas.isAvailable(1)) {
-		std :: cout << "Cantidad Camas : " << h.camas.getQuantity() << std :: endl;
+        h.ocupacionCamas.log(h.camas.getMax()-h.camas.getQuantity());
 		h.camas.acquire(1);
-        h.setAreaUtilizacionServer((h.getSimTime() - h.lastSimTime) * h.camas.getQuantity());
-        h.ocupacionCamas.log(h.camas.getQuantity());
 		std::cout << "un paciente fue aceptado en una cama " << h.getSimTime() << "\n";
 		h.tEspera.log(h.getSimTime() - who->getClock());
 		h.schedule(h.estadia.sample(), who, salidaP);
@@ -46,15 +44,13 @@ void SalidaPaciente::eventRoutine(Entity* who) {
 	std::cout << "un paciente se retira en " << who->getClock() << "\n";
 	// se castea owner a un HospitalSimple
 	HospitalSimple& h = dynamic_cast<HospitalSimple&>(owner);
+    // Se actualiza area de utlizacion de las camas
+    h.ocupacionCamas.log(h.camas.getQuantity());
 	// se retorna la cama que el paciente ocupaba
 	h.camas.returnBin(1);
-    // Se actualiza area de utlizacion de las camas
-    h.setAreaUtilizacionServer((h.getSimTime() - h.lastSimTime) * h.camas.getQuantity());
-    h.ocupacionCamas.log(h.camas.getQuantity());
 	if (!h.cola.empty()) {
+        h.ocupacionCamas.log(h.camas.getMax()-h.camas.getQuantity());
 		h.camas.acquire(1);
-        h.ocupacionCamas.log(h.camas.getQuantity());
-        h.setAreaUtilizacionServer((h.getSimTime() - h.lastSimTime) * h.camas.getQuantity());
 		std::cout << "un paciente fue aceptado en una cama " << h.getSimTime() << "\n";
         h.lCola.log(h.cola.size());
 		Entity* ent = h.cola.pop();

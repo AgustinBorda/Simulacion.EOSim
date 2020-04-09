@@ -36,6 +36,7 @@ void HospitalSimple::init() {
 	// registro las distribuciones
 	registerDist(&arribos);
 	registerDist(&estadia);
+	registerDist(&distribution);
 }
 
 void HospitalSimple::doInitialSchedules() {

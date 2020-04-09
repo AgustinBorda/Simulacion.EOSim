@@ -709,7 +709,7 @@
 	<eosim/core/entity.hpp>
 	<string>
 
-1586459901 source:/home/nicolas/Documentos/simulacion_entrega/Simulacion.EOSim/hospital2/main.cpp
+1586460649 source:/home/nicolas/Documentos/simulacion_entrega/Simulacion.EOSim/hospital2/main.cpp
 	<eosim/dist/mt19937.hpp>
 	<eosim/core/experiment.hpp>
 	"hospitalsimple.hpp"
@@ -748,9 +748,9 @@
 	<eosim/dist/distribution.hpp>
 	<vector>
 
-1586460414 /home/nicolas/Documentos/simulacion_entrega/Simulacion.EOSim/hospital2/constantes.hpp
+1586460797 /home/nicolas/Documentos/simulacion_entrega/Simulacion.EOSim/hospital2/constantes.hpp
 
-1586459059 source:/home/nicolas/Documentos/simulacion_entrega/Simulacion.EOSim/hospital2/paciente.cpp
+1586460765 source:/home/nicolas/Documentos/simulacion_entrega/Simulacion.EOSim/hospital2/paciente.cpp
 	"paciente.hpp"
 	"hospitalsimple.hpp"
 	<iostream>

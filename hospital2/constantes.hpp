@@ -2,7 +2,7 @@
 #define CONSTANTES_HPP_
 
 // constantes del modelo del hospital simple
-const unsigned int cantCamas = 1;
+//const unsigned int cantCamas = 11;
 const double tasaArribos = 6;
 const double tiempoEstadia = 60;
 const double mediaDistNormal = 80;

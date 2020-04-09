@@ -1,0 +1,24 @@
+Las conclusiones que se pueden sacar es que con menos de 6 camas aumenta dramaticamente el tiempo de espera en
+la cola, por lo que es recomendable que el numero de camas sea mayor a este. Por otra parte,
+el tener mas de 10 camas no representaria una mejora sustancial del tiempo de espera de los pacientes,
+por lo cual, no es recomendable poner mas camas que este numero.
+
+Cuando se agrega un evento (que su ocurrencia esta normalmente distribuida con media 80 y varianza 4) el rendimiento decae, siendo que para el mismo numero de camas (8) nos encontramos con lo siguiente:
+
+CON NUEVO EVENTO:																					SIN NUEVO EVENTO:
+	Promedio de gente en cola: 6.85														Promedio de gente en cola: 6.314
+	Promedio de tiempo en cola: 54.528												Promedio de tiempo en cola: 50.27
+	Promedio de camas utilizadas: 6.34												Promedio de camas utilizadas: 6.12
+	Factor utilizacion camas: 0.79														Factor utilizacion camas: 0.76
+
+	Como se puede observar, la diferencia no es muy notable, por lo que con 8 camas el rendimiento (aun con el nuevo evento), se mantendria, ya que si usamos 9
+	camas cuando tenemos el nuevo evento y lo comparamos con 8 camas sin el evento, la version con este es muy superior. Excepto en la cantidad de camas que se utilizan,
+	en el que la version de 8 camas es ligeramente superior y en el factor de utilizacion de camas, en el que la diferencia es despreciable, pero a favor de la version con
+	el evento extra.
+
+
+	CON NUEVO EVENTO (9 camas):																SIN NUEVO EVENTO (8 camas):
+		Promedio de gente en cola: 3.96														Promedio de gente en cola: 6.314
+		Promedio de tiempo en cola: 31.77													Promedio de tiempo en cola: 50.27
+		Promedio de camas utilizadas: 6.84												Promedio de camas utilizadas: 6.12
+		Factor utilizacion camas: 0.760917												Factor utilizacion camas: 0.765313

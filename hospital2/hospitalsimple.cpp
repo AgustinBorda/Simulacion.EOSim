@@ -8,8 +8,9 @@ using namespace eosim::dist;
 
 using namespace std;
 
-HospitalSimple::HospitalSimple(unsigned int cantCamas, double tasaArribos, double tiempoEstadia, double mediaDistNormal, double varianzaDistNormal):
+HospitalSimple::HospitalSimple(unsigned int cantCamas, double tasaArribos, double tiempoEstadia, double mediaDistNormal, double varianzaDistNormal,int nuevoEvento):
 // se contruyen los eventos B, los eventos C, las distribuciones, los recursos y los histogramas
+                                nuevoEvento(nuevoEvento),
 								tasaArribos(tasaArribos),
 								tiempoEstadia(tiempoEstadia),
 								mediaDistNormal(mediaDistNormal),
@@ -43,5 +44,8 @@ void HospitalSimple::doInitialSchedules() {
 	// agendo el primer paciente
 	std::cout <<camas.getQuantity()<< std::endl;
 	schedule(0.0, new Entity(), pacienteF);
-	schedule(distribution.sample(), new Entity(), evento);
+	//Si tenemos la flag habilitada, cargamos el nuevo evento
+	if(nuevoEvento % 2 != 0) {
+		schedule(distribution.sample(), new Entity(), evento);
+	}
 }

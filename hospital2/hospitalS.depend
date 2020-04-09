@@ -359,13 +359,13 @@
 	"hospitalsimple.hpp"
 	<iostream>
 
-1586457047 source:/home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/hospitalsimple.cpp
+1586474191 source:/home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/hospitalsimple.cpp
 	"hospitalsimple.hpp"
 	<eosim/core/entity.hpp>
 	<eosim/dist/numbergenerator.hpp>
 	<iostream>
 
-1586456783 /home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/hospitalsimple.hpp
+1586474196 /home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/hospitalsimple.hpp
 	<eosim/core/model.hpp>
 	<eosim/utils/entityqueuefifo.hpp>
 	<eosim/core/renewable.hpp>
@@ -435,7 +435,7 @@
 	<eosim/core/entity.hpp>
 	<string>
 
-1586457612 source:/home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/main.cpp
+1586474212 source:/home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/main.cpp
 	<eosim/dist/mt19937.hpp>
 	<eosim/core/experiment.hpp>
 	"hospitalsimple.hpp"
@@ -474,7 +474,7 @@
 	<eosim/dist/distribution.hpp>
 	<vector>
 
-1586457478 /home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/constantes.hpp
+1586472752 /home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/constantes.hpp
 
 1586445416 source:/home/nicolas/Documentos/Simulacion.EOSim/hospital2/hospitalsimple.cpp
 	"hospitalsimple.hpp"
@@ -612,7 +612,7 @@
 	<eosim/core/entity.hpp>
 	<string>
 
-1586458070 source:/home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/paciente.cpp
+1586469446 source:/home/agustin/Materias/Simulacion/Practica3/EOSimulator/hospital2/paciente.cpp
 	"paciente.hpp"
 	"hospitalsimple.hpp"
 	<iostream>

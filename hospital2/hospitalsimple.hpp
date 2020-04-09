@@ -20,6 +20,8 @@ Este modelo esta construido en 2 fases
 
 class HospitalSimple: public eosim::core::Model {
 private:
+    // flag que nos indica si cargar o no el evento extra
+    int nuevoEvento;
 	// tasa de arribos de los pacientes
 	double tasaArribos;
 	// tiempo de estadia de los pacientes
@@ -53,7 +55,7 @@ public:
 	// acumulador de tiempo sobre la utilizacion de las camas
     eosim::statics::TimeWeighted ocupacionCamas;
 	// constructor del modelo
-	HospitalSimple(unsigned int cantCamas, double tasaArribos, double tiempoEstadia, double mediaDistNormal, double varianzaDistNormal);
+	HospitalSimple(unsigned int cantCamas, double tasaArribos, double tiempoEstadia, double mediaDistNormal, double varianzaDistNormal, int nuevoEvento);
 	// destructor del modelo
 	~HospitalSimple();
 	// inicializa y registra los atributos del modelo, operacion abstracta de eosim::core::Model

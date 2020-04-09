@@ -5,6 +5,7 @@
 #include <eosim/utils/entityqueuefifo.hpp>
 #include <eosim/core/renewable.hpp>
 #include <eosim/dist/negexpdist.hpp>
+#include <eosim/dist/normaldist.hpp>
 #include <eosim/statics/timeweighted.hpp>
 #include <eosim/statics/observation.hpp>
 #include "paciente.hpp"
@@ -23,7 +24,11 @@ private:
 	double tasaArribos;
 	// tiempo de estadia de los pacientes
 	double tiempoEstadia;
-	// evento de arribo de los pacientes y alimentador (fijo)
+	//media distribucion normal
+	double mediaDistNormal;
+	// varianza distribucion normal
+	double varianzaDistNormal;
+    // evento de arribo de los pacientes y alimentador (fijo)
 	PacienteFeeder pF;
 	// evento de salida de los pacientes (fijo)
 	SalidaPaciente sP;
@@ -31,7 +36,8 @@ private:
 	RandomEvent eA;
 
 public:
-
+    // distribucion normal nuevo evento
+    eosim::dist::NormalDist distribution;
 	// distribucion aleatoria de arribos de pacientes (exponencial)
 	eosim::dist::NegexpDist arribos;
 	// distribucion aleatoria de estadia de pacientes (exponencial)
@@ -47,7 +53,7 @@ public:
 	// acumulador de tiempo sobre la utilizacion de las camas
     eosim::statics::TimeWeighted ocupacionCamas;
 	// constructor del modelo
-	HospitalSimple(unsigned int cantCamas, double tasaArribos, double tiempoEstadia);
+	HospitalSimple(unsigned int cantCamas, double tasaArribos, double tiempoEstadia, double mediaDistNormal, double varianzaDistNormal);
 	// destructor del modelo
 	~HospitalSimple();
 	// inicializa y registra los atributos del modelo, operacion abstracta de eosim::core::Model

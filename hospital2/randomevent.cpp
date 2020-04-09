@@ -12,12 +12,12 @@ void RandomEvent::eventRoutine(Entity* who){
     std::cout << "Evento nuevo en " << who->getClock() << ", flag: " << flag << '\n';
     // se castea owner a un HospitalSimple
 	HospitalSimple& h = dynamic_cast<HospitalSimple&>(owner);
-    if (flag % 2 == 0 && h.camas.isAvailable(1)) {
+    if (flag == 0 && h.camas.isAvailable(1)) {
         h.ocupacionCamas.log(h.camas.getMax()-h.camas.getQuantity());
         h.camas.acquire(1);
-        flag++;
+        flag = 1;
     }
-	else if (flag % 2 != 0 && h.camas.getQuantity() < h.camas.getMax()){
+	else if (flag!= 0){
         h.ocupacionCamas.log(h.camas.getMax()-h.camas.getQuantity());
 		h.camas.returnBin(1);
 		if (!h.cola.empty()) {
@@ -29,8 +29,8 @@ void RandomEvent::eventRoutine(Entity* who){
             h.tEspera.log(h.getSimTime() - ent->getClock());
             h.schedule(h.estadia.sample(), ent, salidaP);
         }
-		flag++;
+        flag = 0;
 	}
-    h.schedule(20.0, new Entity(), evento);
+    h.schedule(h.distribution.sample(), new Entity(), evento);
     delete who;
 }

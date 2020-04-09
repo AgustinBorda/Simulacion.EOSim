@@ -590,7 +590,7 @@
 
 1586441269 /home/nicolas/Documentos/Simulacion.EOSim/hospital2/constantes.hpp
 
-1586443328 source:/home/nicolas/Documentos/Simulacion.EOSim/hospital2/paciente.cpp
+1586447956 source:/home/nicolas/Documentos/Simulacion.EOSim/hospital2/paciente.cpp
 	"paciente.hpp"
 	"hospitalsimple.hpp"
 	<iostream>
@@ -600,7 +600,7 @@
 	<eosim/core/entity.hpp>
 	<string>
 
-1586445959 source:/home/nicolas/Documentos/Simulacion.EOSim/hospital2/randomevent.cpp
+1586451250 source:/home/nicolas/Documentos/Simulacion.EOSim/hospital2/randomevent.cpp
 	"randomevent.hpp"
 	"hospitalsimple.hpp"
 	<iostream>

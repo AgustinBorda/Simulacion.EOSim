@@ -8,6 +8,7 @@
 #include <eosim/statics/timeweighted.hpp>
 #include <eosim/statics/observation.hpp>
 #include "paciente.hpp"
+#include "randomevent.hpp"
 
 /*
 Este es el modelo de simulacion del ejemplo del hospital simple presentado en el libro
@@ -26,6 +27,8 @@ private:
 	PacienteFeeder pF;
 	// evento de salida de los pacientes (fijo)
 	SalidaPaciente sP;
+	// evento aleatorio que ocupa o desocupa una cama (fijo)
+	RandomEvent eA;
 
 public:
 

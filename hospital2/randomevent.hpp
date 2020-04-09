@@ -9,13 +9,17 @@
 const std::string evento = "EventoAleatorio";
 
 class RandomEvent: public eosim::core::BEvent {
+
+protected:
+    int flag = 0;
+
 public:
 	// constructor
 	RandomEvent(eosim::core::Model& model);
 	// destructor
 	~RandomEvent();
 	// rutina del evento fijo
-	void eventRoutine(eosim::core::Entity* who, int flag);
+	void eventRoutine(eosim::core::Entity* who);
 };
 
-#endif // RANDOMEVENT_HPP
+#endif

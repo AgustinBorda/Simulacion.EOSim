@@ -14,6 +14,7 @@ HospitalSimple::HospitalSimple(unsigned int cantCamas, double tasaArribos, doubl
 								tiempoEstadia(tiempoEstadia),
 								pF(*this),
 								sP(*this),
+								eA(*this),
 								arribos(MT19937, tasaArribos),
 								estadia(MT19937, tiempoEstadia),
 								camas(cantCamas, cantCamas),
@@ -27,6 +28,7 @@ void HospitalSimple::init() {
 	// registro los eventos B
 	registerBEvent(&pF);
 	registerBEvent(&sP);
+	registerBEvent(&eA);
 
 	// registro las distribuciones
 	registerDist(&arribos);
@@ -36,4 +38,5 @@ void HospitalSimple::init() {
 void HospitalSimple::doInitialSchedules() {
 	// agendo el primer paciente
 	schedule(0.0, new Entity(), pacienteF);
+	schedule(20.0, new Entity(), evento);
 }
